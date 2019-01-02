@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+WAE_2018_mid_rater_1:
+  paper_id: 1
+  rate: 1
+  rater_id: 1

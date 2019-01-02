@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Paper:</strong>
+  <%= @paper_report.paper %>
+</p>
+
+<p>
+  <strong>Report:</strong>
+  <%= @paper_report.report %>
+</p>
+
+<p>
+  <strong>Reporter:</strong>
+  <%= @paper_report.reporter %>
+</p>
+
+<%= link_to 'Edit', edit_paper_report_path(@paper_report) %> |
+<%= link_to 'Back', paper_reports_path %>

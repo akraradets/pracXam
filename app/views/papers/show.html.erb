@@ -1,0 +1,462 @@
+<script type="text/javascript">
+  $(function () { 
+    // Set up the javascript after the page is ready
+    $('.best_in_place').bind('ajax:success', function(){ this.innerHTML = this.innerHTML.replace(/\n/g, '<br />') });
+    // Load difficulty information
+    getDifficulty();
+    // Load Feedback information
+    getLike();
+    // Popover for like and this like
+    $('[data-toggle="popover"]').popover({ 
+      trigger: 'hover',
+      delay: { "hide": 100 }
+    });
+
+  });
+  // Difficulty Functions
+  function getDifficulty(){
+    $.get( "/papers/<%= @paper.id %>/rate.json")
+    .done(function(res) {
+      displayDif(res)
+    })
+    .fail(function() {
+      alert( "error" );
+    });
+  }
+
+  function postRate(rate){
+    event.preventDefault();
+    $.post( "/papers/<%= @paper.id %>/rate.json", { 
+      rate: rate 
+    })
+    .done(function(res) {
+      displayDif(res)
+    })
+    .fail(function() {
+      alert( "error" );
+    });
+  }
+
+  function displayDif(obj){
+    console.log(obj)
+    // Render current rate
+    ratedIndex = obj['currentRate']
+    diff_btn = {1:"Super-Easy",
+      2:"Easy",
+      3:"Fair",
+      4:"Hard",
+      5:"Too-Hard"
+    }
+    $.each(diff_btn, function(index, value) {
+      $("span[data-text='"+value+"']").removeClass('rated');
+      $("#"+value)[0].checked=false;
+    });
+    if(ratedIndex != '-1'){
+      $("span[data-text='"+diff_btn[ratedIndex]+"']").addClass('rated');
+      $("#"+diff_btn[ratedIndex])[0].checked=true;
+    }
+
+    // Render Bar
+    difObj = obj['rates']
+    diff_option = {1: "bg-super-easy",
+      2: "bg-easy",
+      3: "bg-fair",
+      4: "bg-hard",
+      5: "bg-too-hard"
+    }
+
+    totalRater = 0
+    // Go throug each group in result
+    $.each(difObj, function(index, value) {
+      totalRater += value
+    });
+    // Go throug each diff
+    $.each(diff_option, function(index, value) {
+      if(index in difObj){
+        per = (difObj[index] / totalRater) * 100
+        // Total rater for this rate
+        $("."+value).text(kFormatter(difObj[index]))
+        // progress bar
+        $("."+value).width(per+'%')
+      }
+      else{
+        // Total rater for this rate
+        $("."+value).text(0)
+        // progress bar
+        $("."+value).width(0+'%')
+      }
+    }); 
+    // Check if user already rate
+    $(".diff-avg").text(totalRater);
+  }
+
+
+  // Like functions
+  function getLike(){
+    $.get( "/papers/<%= @paper.id %>/like.json")
+    .done(function(res) {
+      displayLike(res)
+    })
+    .fail(function() {
+      alert( "error" );
+    });
+  }
+
+  function postLike(like){
+    // Reset color on button
+    $(".far.fa-thumbs-up").removeClass('green');
+    $(".far.fa-thumbs-down").removeClass('red');
+    // Start the post
+    $.post( "/papers/<%= @paper.id %>/like.json", { 
+      like: like
+    })
+    .done(function(res) {
+      displayLike(res)
+    })
+    .fail(function() {
+      alert( "error" );
+    });
+  }
+
+  function displayLike(obj){
+    console.log(obj)
+    // Render button color
+    if( obj['userLike'] == 1){
+      $(".far.fa-thumbs-up").addClass('green');
+    }
+    if( obj['userLike'] == 0){
+      $(".far.fa-thumbs-down").addClass('red');
+    }
+    // Render like bar
+    likeObj = obj['likes']
+    like_option = {1: "like",
+      0: "dislike"
+    }
+
+    totalRater = 0
+    // Go throug each group in result
+    $.each(likeObj, function(index, value) {
+      totalRater += value
+    });
+    // Go throug each diff
+    $.each(like_option, function(index, value) {
+      if(index in likeObj){
+        per = (likeObj[index] / totalRater) * 100
+        // progress bar
+        $("#"+value).width(per+'%')
+        // total
+        $("#total-"+value).text(kFormatter(likeObj[index]))
+      }
+      else{
+        // progress bar
+        $("#"+value).width(0+'%')
+        // total
+        $("#total-"+value).text(0)
+      }
+    }); 
+  }
+
+  function kFormatter(num) {
+    return num > 999 ? (num/1000).toFixed(1) + 'k' : num
+  }
+</script>
+<style type="text/css">
+  #difficulty td{
+    padding: 0px 0px 0px 0px;
+  }
+  .progress{
+    margin-left: 10px;
+    margin-top: 3px;
+  }
+  .bg-super-easy{
+    background-color: #57bb8a;
+  }
+  .bg-easy{
+    background-color: #9ace6a;
+  }
+  .bg-fair{
+    background-color: #ffcf02;
+  }
+  .bg-hard{
+    background-color: #ff9f02;
+  }
+  .bg-too-hard{
+    background-color: #ff6f31;
+  }
+  .rate-btn{
+    cursor: pointer;
+    color: grey;
+  }
+  .rated{
+    font-weight: bold;
+    color: black;
+  }
+</style>
+<!-- Paper Information Card -->
+<div style="margin-bottom: 10px;">
+  <a class="btn btn-light" href="<%= papers_path %>" role="button" ><i class="fas fa-chevron-left"></i></a>
+</div>
+<div class="row">
+  <div class="col-12">
+    <!-- Card -->
+    <div class="card">
+      <div class="card-body">
+        <% if @paper.is_owner? current_user %>
+          <a role="button" class="float-right" href="<%= edit_paper_path @paper %>"><i class="fas fa-edit"></i></a>
+        <% end %>
+        <h1><%= "#{@paper.subject.code} - #{@paper.subject.name}" %></h1>
+        <h5 class="card-title"><%= "#{@paper.year} - #{@paper.annual}" %></h5>
+        <div class="row">
+          <div class="col">
+            <p class="text-muted "><%= "Uploaded by #{@paper.user.name}" %></p>
+          </div>
+        </div>
+
+        <!-- Count Total Vote -->
+        <div>
+          <i class="fas fa-user"></i>
+          <span><span class="diff-avg">0</span> Total(s)</span>
+        </div>
+
+        <!-- Difficulty -->
+        <div class="table-responsive" style="margin-bottom: 15px;">
+          <table id="difficulty" class="table table-borderless" style="width: auto; margin-bottom: 0px;">
+            <tr>
+              <td style="padding-left: 0;">
+                <input id="Super-Easy" onclick="postRate(1)" type="checkbox">
+                <span class="rate-btn" onclick="postRate(1)" data-text="Super-Easy">Super Easy</a>
+              </td>
+              <td style="width: 400px;">
+                <div class="progress">
+                  <div class="progress-bar bg-super-easy" role="progressbar" style="width: 0%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 0;">
+                <input id="Easy" onclick="postRate(2)" type="checkbox">
+                <span class="rate-btn" onclick="postRate(2)" data-text="Easy">Easy</a>
+              </td>
+              <td style="width: 400px;">
+                <div class="progress">
+                  <div class="progress-bar bg-easy" role="progressbar" style="width: 0%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 0;">
+                <input id="Fair" onclick="postRate(3)" type="checkbox">
+                <span class="rate-btn" onclick="postRate(3)" data-text="Fair">Fair</a>
+              </td>
+              <td style="width: 400px;">
+                <div class="progress">
+                  <div class="progress-bar bg-fair" role="progressbar" style="width: 0%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 0;">
+                <input id="Hard" onclick="postRate(4)" type="checkbox">
+                <span class="rate-btn" onclick="postRate(4)" data-text="Hard">Hard</a>
+              </td>
+              <td style="width: 400px;">
+                <div class="progress">
+                  <div class="progress-bar bg-hard" role="progressbar" style="width: 0%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 0px;">
+                <input id="Too-Hard" onclick="postRate(5)" type="checkbox">
+                <span class="rate-btn" onclick="postRate(5)" data-text="Too-Hard">Too Hard</a>
+              </td>
+              <td style="width: 400px;">
+                <div class="progress">
+                  <div class="progress-bar bg-too-hard" role="progressbar" style="width: 0%"></div>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <small class="text-muted">Please rate how difficult this paper is</small>
+        </div>
+
+        <!-- Basic Info -->
+        <div class="row" style="margin-bottom: 10px;">
+          <div class="col-12 col-sm-6 col-md-3">
+            <i class="fas fa-chalkboard-teacher" style="margin-right:5px;"></i> <%= "#{@paper.prof_name}" %><br>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <i class="far fa-clock" style="margin-right:5px;"></i> <%= "#{@paper.duration}" %> <span> Min(s)</span><br>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <i class="fas fa-book-open" style="margin-right:5px;"></i>Open Book? <i class="fa <%= @paper.open_book ? 'fa-check green':'fa-times red' %>"></i><br>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <i class="fas fa-laptop" style="margin-right:5px;"></i>Open Network? <i class="fa <%= @paper.open_network ? 'fa-check green':'fa-times red' %>"></i>
+          </div>
+        </div>
+
+        <% if @paper.document.exists? %>
+        <div class="row">
+          <!-- Download Button -->
+          <div class="col col-lg-2">
+            <a class="btn btn-info" href="<%= @paper.document.url %>" target="_blank" role="button"><i class="fas fa-download"></i> Download</a>
+          </div>
+          <!-- Like and Dislike -->
+          <div class="col col-lg-2">
+            <div class="row">
+              <span class="col" onclick="postLike('1')" data-toggle="popover" data-placement="top" data-content="I [like] this exam paper." style="cursor: pointer; text-align: right; padding-top: 5px;">
+                <i class="far fa-thumbs-up" style="margin-right: 5px;"></i>
+                <span id="total-like">0</span>
+              </span>
+              <span class="col" onclick="postLike('0')" data-toggle="popover" data-placement="top" data-content="I [don't like] this exam paper." style="cursor: pointer; text-align: left; padding-top: 5px;">
+                <i class="far fa-thumbs-down" style="margin-right: 5px;"></i>
+                <span id="total-dislike">0</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-2"></div>
+          <!-- Like and Dislike bar -->
+          <div class="col col-lg-2">
+            <div class="progress" style="height: 5px; margin: 0px;">
+              <div id="like" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+              <div id="dislike" class="progress-bar bg-danger" role="progressbar" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!-- Discussion -->
+<% @paper.discussions.each do |discussion| %>
+  <div class="card"">
+    <div class="card-body">
+      <% if discussion.is_owner? current_user %>
+        <div class="float-right">
+          <a id='<%= "discussion-#{discussion.id}" %>' href="javascript:void(0)" style="padding: 0px;"><i class="fas fa-edit"></i></a>
+          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%= discussion_path discussion %>"><i class="far fa-trash-alt"></i></a>
+        </div>
+      <% end %>
+      <div class="card-title">
+        <h4><b><%= "#{discussion.owner_name}" %></b></h4>
+        <span class="text-muted"><%="#{discussion.display_created_at}"%></span>
+      </div>
+      <div class="card-content">
+        <%= 
+          best_in_place_if discussion.is_owner?(current_user), 
+          discussion, :content, activator: "#discussion-#{discussion.id}", :display_with => 'simple_format',
+          inner_class: "form-control", as: :textarea,
+          ok_button: 'Save', ok_button_class: "btn btn-success",
+          cancel_button: 'Cancel', cancel_button_class: "btn btn-danger"
+        %>
+      </div>
+<!--       <div>
+        <button id='discussion-like-<%= discussion.id %>' value='<%= discussion.id %>' type="button" class="btn btn-outline-primary" style="padding: 0px 10px 0px 10px;">
+          <i class="far fa-thumbs-up"></i>
+        </button>
+        <button id='discussion-likeinfo-<%= discussion.id %>' value='' type="button" class="btn btn-link" style="padding: 0px 30px 0px 10px;">
+          <%= discussion.upvotes.count %> Like(s)
+        </button>
+      </div> -->
+      <hr>
+      <!-- Comment Section -->
+      <div class="comments">
+        <% discussion.comments.each do |comment| %>
+          <div class='comment-<%= comment.id %>'>
+            <div>
+              <i class="far fa-comments" style="margin-right: 5px;"></i><b><%= comment.owner_name %></b>
+              <% if comment.is_owner? current_user %>
+              <span class="dropdown">
+                <a class="dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" id='<%= "comment-#{comment.id}" %>' href="javascript:void(0)"><i class="fas fa-edit" style="margin-right: 5px;"></i>Edit</a>
+                  <a class="dropdown-item" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%= discussion_comment_path comment %>"><i class="far fa-trash-alt" style="margin-right: 5px;"></i>Delete</a>
+                </div>
+              </span>
+              <% end %>
+            </div>
+            <div>
+              <%= 
+                best_in_place_if comment.is_owner?(current_user), 
+                comment, :content, activator: "#comment-#{comment.id}", :display_with => 'simple_format',
+                inner_class: "form-control", as: :textarea,
+                ok_button: 'Save', ok_button_class: "btn btn-success",
+                cancel_button: 'Cancel', cancel_button_class: "btn btn-danger"
+              %>
+            </div>
+          </div>
+          <hr>
+        <% end %>
+        <!-- New Comment -->
+        <% @discussion_comment = DiscussionComment.new discussion_id: discussion.id %>
+        <%= form_with(model: @discussion_comment, local: true) do |form| %>
+          <% if @discussion_comment.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@discussion_comment.errors.count, "error") %> prohibited this @discussion_comment from being saved:</h2>
+
+              <ul>
+              <% @discussion_comment.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= form.hidden_field :discussion_id %>
+          <div class="input-group">
+            <%= form.text_field :content, class: "form-control", autocomplete:'off',required:true %>
+            <div class="input-group-append" id="button-addon4">
+              <button id='comment-for-<%= discussion.id %>' class="btn btn-outline-secondary" type="submit" name="commit">
+                <i class="far fa-paper-plane" style="margin-right: 10px;"></i>Save
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<br>
+<% end %>
+
+<!-- New Discussion -->
+<div class="row">
+  <div class="col-12">
+    <!-- Card -->
+    <div class="card">
+      <div class="card-body">
+        <%= form_with(model: @discussion, local: true) do |form| %>
+          <% if @discussion.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@discussion.errors.count, "error") %> prohibited this @discussion from being saved:</h2>
+
+              <ul>
+              <% @discussion.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <h3><i class="far fa-comment-dots" style="margin-right: 5px;"></i>New Discussion</h3>
+
+          <%= form.hidden_field :paper_id %>
+
+          <div class="form-group">
+            <%= form.text_area :content, class: "form-control" , required: true %>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-info" type="submit" name="commit"><i class="far fa-save" style="margin-right: 10px;"></i>Submit</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

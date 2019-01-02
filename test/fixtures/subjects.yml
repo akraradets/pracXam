@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+WAE:
+  id: 1
+  code: AT70.12 
+  name: Web Application Engineering
+  cs_required: true
+  im_required: false
+
+ML:
+  id: 2
+  code: AT70.9022
+  name: Machine Learning
+  cs_required: false
+  im_required: false
+
+TOC:
+  id: 3
+  code: AT70.02
+  name: Theory of Computation
+  cs_required: true
+  im_required: false

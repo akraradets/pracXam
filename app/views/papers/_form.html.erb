@@ -1,0 +1,89 @@
+<% if paper.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <!-- <h4 class="alert-heading">Error(s)</h4> -->
+    <!-- <ul> -->
+      <% paper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <!-- </ul> -->
+  </div>
+<% end %>
+<!-- Form Card -->
+<div class="row">
+  <div class="col-12">
+    <!-- Card -->
+    <div class="card">
+      <div class="card-body">
+        <%= form_with(model: paper, local: true, html: { multipart: true }) do |form| %>
+          <!-- Select Subject -->
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Subject</label>
+            <div class="col-md-9">
+              <%= form.select :subject_id, @subject_options, {include_blank: "Please Select"}, {class: 'form-control', required:true} %>
+              <small>Not in the list? Create new one <a href="<%= new_subject_url %>">here</a></small>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Year</label>
+            <div class="col-md-9">
+              <%= form.text_field :year, class: "form-control", required:true %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Annual</label>
+            <div class="col-md-9">
+              <%= form.select :annual, @annuals, {include_blank: "Please Select"}, {class: 'form-control', required:true} %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Semester</label>
+            <div class="col-md-9">
+              <%= form.select :month, @semesters  , {include_blank: "Please Select"}, {class: 'form-control', required:true} %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Professor Name</label>
+            <div class="col-md-9">
+              <%= form.text_field :prof_name, class: 'form-control', required:true %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Exam Duration (Minutes)</label>
+            <div class="col-md-9">
+              <%= form.text_field :duration, class: 'form-control', placeholder: 'In minutes', required:true %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-3">Open Book?</div>
+            <div class="col-md-9">
+              <%= form.check_box :open_book %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-3">Open Laptop?</div>
+            <div class="col-md-9">
+              <%= form.check_box :open_network %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-3">Paper</div>
+            <div class="col-md-9">
+              <% if paper.document.exists? %>
+                <a href="<%= paper.document.url %>" target="_blank">Download</a>
+                <input type="file" name="paper[document]" id="paper_document">
+              <% else %>
+                <input required="required" type="file" name="paper[document]" id="paper_document">
+              <% end %>
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                Only accept pdf file.
+              </small>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-info" type="submit" name="commit"><i class="far fa-save" style="margin-right: 10px;"></i>Save</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

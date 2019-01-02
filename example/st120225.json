@@ -1,0 +1,22 @@
+[
+    {
+        "myhash":{
+            "uid":[
+                "st120225"
+            ],
+            "title":[
+                "CS Master student"
+            ],
+            "gecos":[
+                "Nang San Hom"
+            ],
+            "employeetype":[
+                "Student"
+            ],
+            "mail":[
+                "sanhom7@gmail.com",
+                "st120225@cs.ait.ac.th"
+            ]
+        }
+    }
+]

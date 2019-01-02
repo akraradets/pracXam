@@ -1,0 +1,22 @@
+[
+    {
+        "myhash":{            
+            "uid":[
+                "st120224"
+            ],
+            "title":[
+                "CS Master student"
+            ],
+            "gecos":[
+                "Akraradet Sinsamersuk"
+            ],
+            "employeetype":[
+                "Student"
+            ],
+            "mail":[
+                "st120224@cs.ait.ac.th",
+                "st120224@ait.asia"
+            ]
+        }
+    }
+]

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PracXam</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+  <body>
+    <!-- Nav bar -->
+    <nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-md navbar-light bg-light">
+      <a class="navbar-brand" href="/">PracXam</a>
+
+      <!-- Only render when user is signed -->
+      <% if user_signed_in? %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="d-block d-md-none">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="<%= new_paper_path %>">
+                  <span class="fas fa-plus" style="margin-right:10px;"></span> Upload exam
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" data-method="delete" href="<%= destroy_user_session_path %>">
+                  <span class="fas fa-sign-out-alt" style="margin-right: 5px;"></span> Sign out from
+                  <span><b><%= current_user.name %></b></span>
+                </a>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="d-none d-md-block">
+          <ul class="navbar-nav">
+            <li class="nav_item" style="margin-right:20px;">
+              <a class="btn btn-secondary" href="<%= new_paper_path %>" role="button" ><span class="fas fa-plus" style="margin-right:10px;"></span>Upload Exam</a>
+            </li>
+            <li class="nav-item">
+              <span class="navbar-text"> Welcome </span> 
+              <span style="color:white;"><b><%= current_user.name %></b></span>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" rel="nofollow" data-method="delete" href="<%= destroy_user_session_path %>"><i class="fas fa-sign-out-alt" style="margin-right: 5px;"></i> Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+
+    </nav>
+    <!-- Content -->
+    <div class="container-fluid">
+      <div class="row justify-content-center" style="margin-top:70px; margin-bottom:60px;">
+        <div class="col-12 col-lg-8">
+        <!-- Content -->
+          <% if flash[:notice] %>
+            <p class="alert alert-success"><%= flash[:notice] %></p>
+          <% end %>
+          <% if flash[:alert] %>
+            <p class="alert alert-danger"><%= flash[:alert] %></p>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <nav class="navbar fixed-bottom navbar-dark bg-dark" style="color:white">
+      <div>
+        <small>Web18-03</small>
+      </div>
+      <div>
+        <small>Web Application Engineering</small>
+      </div>
+      <div>
+        <small>AIT</small>
+      </div>
+    </nav>
+  </body>
+</html>

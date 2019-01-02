@@ -1,0 +1,26 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+WAE_2018_mid:
+  id: 1
+  year: 2018
+  month: Aug
+  annual: mid
+  prof_name: M.Dailey
+  duration: 180
+  open_book: true
+  open_network: true
+  user_id: 1
+  subject_id: 1
+
+WAE_2018_fin:
+  id: 2
+  year: 2018
+  month: Aug
+  annual: fin
+  prof_name: M.Dailey
+  duration: 180
+  open_book: true
+  open_network: true
+  user_id: 1
+  subject_id: 1
+

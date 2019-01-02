@@ -1,0 +1,69 @@
+<style type="text/css">
+  a.disable{
+    pointer-events: none;
+    color: grey;
+  }
+</style>
+<script type="text/javascript">
+  $(function () { 
+    $('[data-toggle="popover"]').popover({ 
+      trigger: 'hover',
+      delay: { "show": 500, "hide": 100 }
+    });
+  });
+</script>
+<h1>Subject List</h1>
+<div class="table-responsive">
+  <table class="table table-hover table-sm" style="text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Cs required</th>
+        <th scope="col">Im required</th>
+        <th scope="col">Total Paper(s)</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @subjects.each do |subject| %>
+      <% paper_count = subject.papers.count %>
+        <tr>
+          <td style="text-align: left;"><%= subject.code %></td>
+          <td style="text-align: left;"><%= subject.name %></td>
+          <td>
+            <% if subject.cs_required %>
+              <span class="badge badge-primary">Yes</span>
+            <% else %>
+              No
+            <% end %>
+        </td>
+          <td>
+            <% if subject.im_required %>
+              <span class="badge badge-primary">Yes</span>
+            <% else %>
+              No
+            <% end %>
+          </td>
+          <td><a href="<%= papers_path() + '?subject_id=' + subject.id.to_s %>" ><%= paper_count %></a></td>
+          <td><a href="<%= edit_subject_path(subject) %>" ><i class="fas fa-edit"></i></a></td>
+          <td>
+            <% if paper_count != 0 %>
+            <span class="d-inline-block" data-toggle="popover" data-title="Cannot delete!" data-content="Delete is allowed when no paper belong to this subject.">
+              <a class="disable" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%= subject_path subject %>">
+                <i class="far fa-trash-alt"></i>
+              </a>
+            </span>
+            <% else %>
+              <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%= subject_path subject %>">
+                <i class="far fa-trash-alt"></i>
+              </a>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'New Subject', new_subject_path %>

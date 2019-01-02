@@ -1,0 +1,50 @@
+<% if subject.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <!-- <h4 class="alert-heading">Error(s)</h4> -->
+    <!-- <ul> -->
+      <% subject.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <!-- </ul> -->
+  </div>
+<% end %>
+<!-- Form Card -->
+<div class="row">
+  <div class="col-12">
+    <!-- Card -->
+    <div class="card">
+      <div class="card-body">
+        <%= form_with(model: subject, local: true) do |form| %>
+          <!-- Select Subject -->
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Code</label>
+            <div class="col-md-9">
+              <%= form.text_field :code, class: "form-control", required: true %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Name</label>
+            <div class="col-md-9">
+              <%= form.text_field :name, class: "form-control", required: true %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-3">CS Required?</div>
+            <div class="col-md-9">
+              <%= form.check_box :cs_required %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-3">IM Required?</div>
+            <div class="col-md-9">
+              <%= form.check_box :im_required %>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-info" type="submit" name="commit"><i class="far fa-save" style="margin-right: 10px;"></i>Save</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

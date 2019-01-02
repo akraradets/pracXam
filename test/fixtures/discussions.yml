@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+WAE_2018_mid_discuss1:
+  id: 1
+  user_id: 1
+  paper_id: 1
+  content: MyString
+
+WAE_2018_mid_discuss2:
+  id: 2
+  user_id: 2
+  paper_id: 1
+  content: MyString

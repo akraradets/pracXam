@@ -1,0 +1,21 @@
+[
+    {
+        "myhash":{
+            "title":[
+                "Assistant Professor "
+            ],
+            "gecos":[
+                "Matthew Dailey"
+            ],
+            "employeetype":[
+                "Faculty"
+            ],
+            "uid":[
+                "mdailey"
+            ],
+            "mail":[
+                "mdailey@cs.ait.ac.th"
+            ]
+        }
+    }
+]

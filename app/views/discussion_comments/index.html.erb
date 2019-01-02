@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Discussion Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Discussion</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @discussion_comments.each do |discussion_comment| %>
+      <tr>
+        <td><%= discussion_comment.user %></td>
+        <td><%= discussion_comment.discussion %></td>
+        <td><%= discussion_comment.content %></td>
+        <td><%= link_to 'Show', discussion_comment %></td>
+        <td><%= link_to 'Edit', edit_discussion_comment_path(discussion_comment) %></td>
+        <td><%= link_to 'Destroy', discussion_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Discussion Comment', new_discussion_comment_path %>

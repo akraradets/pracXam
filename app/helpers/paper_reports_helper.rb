@@ -1,0 +1,2 @@
+module PaperReportsHelper
+end
