@@ -1182,14 +1182,14 @@
   },
   "RSpec": {
     "coverage": {
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/environment.rb": [
+      "/home/akrarads/project/pracXam/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/environments/test.rb": [
+      "/home/akrarads/project/pracXam/config/environments/test.rb": [
         1,
         null,
         null,
@@ -1237,7 +1237,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/active_admin.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/active_admin.rb": [
         1,
         null,
         null,
@@ -1532,7 +1532,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/application_controller_renderer.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -1542,7 +1542,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/assets.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -1558,7 +1558,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/backtrace_silencers.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -1567,7 +1567,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/content_security_policy.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/content_security_policy.rb": [
         null,
         null,
         null,
@@ -1594,14 +1594,14 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/cookies_serializer.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
         null,
         1
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/devise.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/devise.rb": [
         null,
         null,
         null,
@@ -1904,13 +1904,13 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/filter_parameter_logging.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/inflections.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -1928,13 +1928,13 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/mime_types.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/initializers/wrap_parameters.rb": [
+      "/home/akrarads/project/pracXam/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -1950,7 +1950,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/config/routes.rb": [
+      "/home/akrarads/project/pracXam/config/routes.rb": [
         1,
         1,
         1,
@@ -1973,40 +1973,40 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/helpers/application_helper.rb": [
+      "/home/akrarads/project/pracXam/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/helpers/discussion_comments_helper.rb": [
+      "/home/akrarads/project/pracXam/app/helpers/discussion_comments_helper.rb": [
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/helpers/discussions_helper.rb": [
+      "/home/akrarads/project/pracXam/app/helpers/discussions_helper.rb": [
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/helpers/paper_reports_helper.rb": [
+      "/home/akrarads/project/pracXam/app/helpers/paper_reports_helper.rb": [
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/helpers/papers_helper.rb": [
+      "/home/akrarads/project/pracXam/app/helpers/papers_helper.rb": [
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/helpers/subjects_helper.rb": [
+      "/home/akrarads/project/pracXam/app/helpers/subjects_helper.rb": [
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/helpers/user_reports_helper.rb": [
+      "/home/akrarads/project/pracXam/app/helpers/user_reports_helper.rb": [
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/application_record.rb": [
+      "/home/akrarads/project/pracXam/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/user.rb": [
+      "/home/akrarads/project/pracXam/app/models/user.rb": [
         1,
         1,
         null,
@@ -2039,7 +2039,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/controllers/discussions_controller_test.rb": [
+      "/home/akrarads/project/pracXam/test/controllers/discussions_controller_test.rb": [
         1,
         null,
         1,
@@ -2131,7 +2131,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/controllers/paper_reports_controller_test.rb": [
+      "/home/akrarads/project/pracXam/test/controllers/paper_reports_controller_test.rb": [
         1,
         null,
         1,
@@ -2221,7 +2221,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/controllers/papers_controller_test.rb": [
+      "/home/akrarads/project/pracXam/test/controllers/papers_controller_test.rb": [
         1,
         null,
         1,
@@ -2390,7 +2390,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/controllers/subjects_controller_test.rb": [
+      "/home/akrarads/project/pracXam/test/controllers/subjects_controller_test.rb": [
         1,
         null,
         1,
@@ -2487,7 +2487,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/controllers/user_reports_controller_test.rb": [
+      "/home/akrarads/project/pracXam/test/controllers/user_reports_controller_test.rb": [
         1,
         1,
         1,
@@ -2545,7 +2545,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/discussion_comment_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/discussion_comment_test.rb": [
         1,
         null,
         1,
@@ -2554,7 +2554,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/discussion_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/discussion_test.rb": [
         1,
         null,
         1,
@@ -2563,7 +2563,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/discussion_upvote_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/discussion_upvote_test.rb": [
         1,
         null,
         1,
@@ -2572,7 +2572,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/paper_difficulty_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/paper_difficulty_test.rb": [
         1,
         null,
         1,
@@ -2581,7 +2581,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/paper_feedback_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/paper_feedback_test.rb": [
         1,
         null,
         1,
@@ -2590,7 +2590,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/paper_report_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/paper_report_test.rb": [
         1,
         null,
         1,
@@ -2599,7 +2599,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/paper_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/paper_test.rb": [
         1,
         null,
         1,
@@ -2608,7 +2608,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/subject_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/subject_test.rb": [
         1,
         null,
         1,
@@ -2617,7 +2617,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/user_report_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/user_report_test.rb": [
         1,
         null,
         1,
@@ -2626,7 +2626,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/test/models/user_test.rb": [
+      "/home/akrarads/project/pracXam/test/models/user_test.rb": [
         1,
         null,
         1,
@@ -2639,7 +2639,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/paper.rb": [
+      "/home/akrarads/project/pracXam/app/models/paper.rb": [
         1,
         1,
         1,
@@ -2667,9 +2667,9 @@
         1,
         2,
         2,
-        1,
+        0,
         null,
-        1,
+        2,
         null,
         null,
         null,
@@ -2691,19 +2691,19 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/discussion_upvote.rb": [
+      "/home/akrarads/project/pracXam/app/models/discussion_upvote.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/user_report.rb": [
+      "/home/akrarads/project/pracXam/app/models/user_report.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/discussion_comment.rb": [
+      "/home/akrarads/project/pracXam/app/models/discussion_comment.rb": [
         1,
         1,
         1,
@@ -2718,7 +2718,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/paper_difficulty.rb": [
+      "/home/akrarads/project/pracXam/app/models/paper_difficulty.rb": [
         1,
         1,
         null,
@@ -2726,7 +2726,7 @@
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/subject.rb": [
+      "/home/akrarads/project/pracXam/app/models/subject.rb": [
         1,
         1,
         1,
@@ -2754,13 +2754,13 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/paper_feedback.rb": [
+      "/home/akrarads/project/pracXam/app/models/paper_feedback.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/discussion.rb": [
+      "/home/akrarads/project/pracXam/app/models/discussion.rb": [
         1,
         1,
         1,
@@ -2780,7 +2780,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/models/paper_report.rb": [
+      "/home/akrarads/project/pracXam/app/models/paper_report.rb": [
         1,
         1,
         1,
@@ -2788,7 +2788,7 @@
         1,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/controllers/discussions_controller.rb": [
+      "/home/akrarads/project/pracXam/app/controllers/discussions_controller.rb": [
         1,
         1,
         1,
@@ -2874,7 +2874,7 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/controllers/subjects_controller.rb": [
+      "/home/akrarads/project/pracXam/app/controllers/subjects_controller.rb": [
         1,
         1,
         1,
@@ -2971,7 +2971,243 @@
         null,
         null
       ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/controllers/papers_controller.rb": [
+      "/home/akrarads/project/pracXam/app/controllers/discussion_comments_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        null,
+        2,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        1,
+        null,
+        2,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        6,
+        null,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null
+      ],
+      "/home/akrarads/project/pracXam/app/controllers/paper_reports_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        2,
+        2,
+        2,
+        1,
+        null,
+        2,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        1,
+        null,
+        2,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        2,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null
+      ],
+      "/home/akrarads/project/pracXam/app/controllers/user_reports_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        2,
+        2,
+        2,
+        1,
+        null,
+        2,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        2,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/home/akrarads/project/pracXam/app/controllers/papers_controller.rb": [
         1,
         1,
         1,
@@ -3142,244 +3378,8 @@
         null,
         null,
         null
-      ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/controllers/user_reports_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        2,
-        2,
-        2,
-        1,
-        null,
-        2,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        2,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        2,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null
-      ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/controllers/discussion_comments_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        1,
-        null,
-        2,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        1,
-        null,
-        2,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        1,
-        null,
-        2,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        6,
-        null,
-        null,
-        null,
-        1,
-        4,
-        null,
-        null
-      ],
-      "/home/akrarads/_AIT/sem1/WAE/web18-03/pracXam/app/controllers/paper_reports_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        2,
-        2,
-        2,
-        1,
-        null,
-        2,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        1,
-        null,
-        2,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        2,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        5,
-        null,
-        null,
-        null,
-        1,
-        4,
-        null,
-        null
       ]
     },
-    "timestamp": 1543587059
+    "timestamp": 1548237371
   }
 }

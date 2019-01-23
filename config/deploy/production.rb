@@ -8,7 +8,7 @@ set :default_env, {'HTTP_PROXY'=>'192.41.170.23:3128',
                    'BAZOOKA_USER' => ENV['BAZOOKA_USER']
                  }
 
-server "web3.cs.ait.ac.th", user: "deploy", roles: %w{app db web}
+server "exam.cs.ait.ac.th", user: "deploy", roles: %w{app db web}
 
 # server-based syntax
 # ======================
