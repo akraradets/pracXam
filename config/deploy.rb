@@ -2,10 +2,10 @@
 lock "~> 3.11.0"
 
 set :application, "pracXam"
-set :repo_url, "git@ait-vision.org:web18-03"
+set :repo_url, "akraradets@github.com/akraradets/pracXam"
 set :repo_tree, 'pracXam'
 set :rbenv_type, :user
-set :rbenv_ruby, '2.5.1'
+set :rbenv_ruby, '2.6.0'
 
 append :linked_files, "config/database.yml", "config/master.key", "config/ldap.yml"
 append :linked_dirs, "log", "tmp", "public/system", ".bundle"
