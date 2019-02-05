@@ -2,8 +2,8 @@
 lock "~> 3.11.0"
 
 set :application, "pracXam"
-set :repo_url, "akraradets@github.com/akraradets/pracXam"
-set :repo_tree, 'pracXam'
+set :repo_url, "git@github.com:akraradets/pracXam"
+# set :repo_tree, 'pracXam'
 set :rbenv_type, :user
 set :rbenv_ruby, '2.6.0'
 
