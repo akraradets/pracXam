@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :ldap_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable, :trackable
+  :recoverable, :validatable, :trackable
   has_many :discussions
   has_many :upvotes, :class_name => 'DiscussionUpvote', :foreign_key => 'voter'
   has_many :comments, :class_name => 'DiscussionComment', :foreign_key => 'user'
